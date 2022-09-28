@@ -15,6 +15,7 @@
 		66CDC54F28E42FD300B2B560 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CDC54E28E42FD300B2B560 /* OnboardingViewController.swift */; };
 		66CDC55228E43A7A00B2B560 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CDC55128E43A7A00B2B560 /* UIView + Extension.swift */; };
 		66CDC55428E43BC900B2B560 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CDC55328E43BC900B2B560 /* OnboardingSlide.swift */; };
+		66CDC55628E4657E00B2B560 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CDC55528E4657E00B2B560 /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		66CDC54E28E42FD300B2B560 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		66CDC55128E43A7A00B2B560 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		66CDC55328E43BC900B2B560 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		66CDC55528E4657E00B2B560 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				66CDC54E28E42FD300B2B560 /* OnboardingViewController.swift */,
+				66CDC55528E4657E00B2B560 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				66CDC53628E4275A00B2B560 /* AppDelegate.swift in Sources */,
 				66CDC54F28E42FD300B2B560 /* OnboardingViewController.swift in Sources */,
 				66CDC53828E4275A00B2B560 /* SceneDelegate.swift in Sources */,
+				66CDC55628E4657E00B2B560 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
