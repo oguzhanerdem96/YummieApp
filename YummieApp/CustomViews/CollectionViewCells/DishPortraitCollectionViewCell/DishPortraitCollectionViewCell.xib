@@ -77,7 +77,7 @@
                 <outlet property="dishImageView" destination="fnw-er-82c" id="Ksm-92-4of"/>
                 <outlet property="titleLbl" destination="fAn-cx-VcJ" id="ddj-RZ-gCv"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+            <point key="canvasLocation" x="377" y="17"/>
         </collectionViewCell>
     </objects>
     <resources>
