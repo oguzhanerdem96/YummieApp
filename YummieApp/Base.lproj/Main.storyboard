@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9jG-RE-2jf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -313,8 +313,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yummie" id="CPX-8n-GGe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2xA-Mh-nk0"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart.circle.fill" catalog="system" id="dQr-H4-wmw">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="9jG-RE-2jf" kind="show" id="7PN-G5-lIU"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -326,6 +330,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0na-Jh-O7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="81.696428571428569"/>
+        </scene>
+        <!--List Orders View Controller-->
+        <scene sceneID="Q77-Ms-ev3">
+            <objects>
+                <viewController storyboardIdentifier="ListOrdersViewController" id="9jG-RE-2jf" customClass="ListOrdersViewController" customModule="YummieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cx1-Cy-tLe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W8P-rK-vez">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9jG-RE-2jf" id="ooR-su-vJn"/>
+                                    <outlet property="delegate" destination="9jG-RE-2jf" id="kSE-XC-SV7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UZc-Sz-sPn"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W8P-rK-vez" firstAttribute="leading" secondItem="UZc-Sz-sPn" secondAttribute="leading" id="21c-0u-CtL"/>
+                            <constraint firstAttribute="bottom" secondItem="W8P-rK-vez" secondAttribute="bottom" id="B5H-AI-VIg"/>
+                            <constraint firstItem="W8P-rK-vez" firstAttribute="top" secondItem="UZc-Sz-sPn" secondAttribute="top" id="HMe-qh-27g"/>
+                            <constraint firstItem="W8P-rK-vez" firstAttribute="trailing" secondItem="UZc-Sz-sPn" secondAttribute="trailing" id="uxn-gG-dpl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EO9-l2-Ubt"/>
+                    <connections>
+                        <outlet property="tableView" destination="W8P-rK-vez" id="Oib-G3-DBd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UZ-jd-g4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.9420289855075" y="833.70535714285711"/>
         </scene>
         <!--Dish Detail View Controller-->
         <scene sceneID="jSY-R2-ysP">
@@ -419,6 +458,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VN6-mE-obJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2971.0144927536235" y="81.696428571428569"/>
+        </scene>
+        <!--List Dishes View Controller-->
+        <scene sceneID="bjv-j6-73X">
+            <objects>
+                <viewController storyboardIdentifier="ListDishesViewController" id="Mzh-sf-g2r" customClass="ListDishesViewController" customModule="YummieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T1e-4c-2dd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-Y0-HCU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mzh-sf-g2r" id="nnh-w3-VTA"/>
+                                    <outlet property="delegate" destination="Mzh-sf-g2r" id="ge7-hM-aoI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kbt-6f-Bqg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q76-Y0-HCU" firstAttribute="leading" secondItem="kbt-6f-Bqg" secondAttribute="leading" id="1mA-ji-90u"/>
+                            <constraint firstItem="kbt-6f-Bqg" firstAttribute="bottom" secondItem="Q76-Y0-HCU" secondAttribute="bottom" id="3Eg-dz-8yi"/>
+                            <constraint firstItem="Q76-Y0-HCU" firstAttribute="trailing" secondItem="kbt-6f-Bqg" secondAttribute="trailing" id="LEe-gz-rWd"/>
+                            <constraint firstItem="Q76-Y0-HCU" firstAttribute="top" secondItem="kbt-6f-Bqg" secondAttribute="top" id="v9a-95-g0c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Q76-Y0-HCU" id="sr0-9Q-Tnk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yN-Hz-y2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3972" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjn-75-DtW">
