@@ -7,5 +7,5 @@ target 'YummieApp' do
 
   # Pods for YummieApp
   pod "Kingfisher"
-
+  pod "ProgressHUD"
 end

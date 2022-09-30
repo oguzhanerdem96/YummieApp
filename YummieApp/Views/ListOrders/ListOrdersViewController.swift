@@ -6,21 +6,31 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrdersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var orders: [Order] = [
-        .init(id: "id", name: "Emanuel Okwara", dish: .init(id: "id1", name: "Garry", description: "This is the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 34)),
-        .init(id: "id", name: "Kral Okwara", dish: .init(id: "id1", name: "Hi Guys", description: "This is the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 34)),
-        .init(id: "id", name: "Cemil Okwara", dish: .init(id: "id1", name: "Whatt", description: "This is the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 34)),
-        .init(id: "id", name: "Oğuz Okwara", dish: .init(id: "id1", name: "Deneme", description: "This is the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 34)),
-             
-    ]
+    var orders: [Order] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Orders"
         registerCells()
+        ProgressHUD.show()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkService.shared.fetchOrders { [weak self] (result) in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                
+                self?.orders = orders
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
+    }
+
     
 
     private func registerCells() {
@@ -38,5 +48,10 @@ extension ListOrdersViewController: UITableViewDelegate , UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: DishListTableViewCell.identifier) as! DishListTableViewCell
         cell.setup(order: orders[indexPath.row])
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DishDetailViewController.instantiate()
+        controller.dish = orders[indexPath.row].dish
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
